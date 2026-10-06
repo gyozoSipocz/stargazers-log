@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'DM Sans', sans-serif;
+  color: #17231f;
+  background: #f5f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --muted: #718078;
+  --green: #176b4b;
+  --line: #e6ebe6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(198, 226, 205, 0.48), transparent 55%),
+    #f5f7f4;
+}
+
+.page-shell {
+  width: min(100% - 40px, 760px);
+  margin: 0 auto;
+  padding: 76px 0 64px;
+}
+
+.site-header {
+  margin-bottom: 34px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 16px;
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #60a77f;
+  content: '';
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4.25rem);
+  letter-spacing: -0.065em;
+  line-height: 1.04;
+}
+
+.intro {
+  max-width: 470px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.star-icon {
+  color: #d49a26;
+}
+
+.list-panel {
+  overflow: hidden;
+  border: 1px solid #e4e9e3;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 45px rgba(24, 48, 34, 0.06);
+}
+
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 21px 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.list-heading h2 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.06rem;
+  letter-spacing: -0.02em;
+}
+
+#repository-count {
+  flex: none;
+  padding: 5px 10px;
+  border: 1px solid #e4e9e3;
+  border-radius: 999px;
+  color: #617168;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.repository-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repository-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 25px;
+}
+
+.repository-item + .repository-item {
+  border-top: 1px solid var(--line);
+}
+
+.repository-mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  place-items: center;
+  border: 1px solid #e9eee8;
+  border-radius: 11px;
+  background: #f7faf6;
+  color: #5c7566;
+  font-size: 1.15rem;
+}
+
+.repository-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.repository-name {
+  color: #1d6044;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.repository-name:hover {
+  color: #0d4730;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.repository-description {
+  margin: 6px 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.repository-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 15px;
+  color: #77847c;
+  font-size: 0.77rem;
+}
+
+.language {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #53645a;
+}
+
+.language::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b58cc9;
+  content: '';
+}
+
+.language[data-language='TypeScript']::before {
+  background: #3178c6;
+}
+
+.language[data-language='Markdown']::before {
+  background: #7c8580;
+}
+
+.status-message {
+  margin: 0;
+  padding: 28px 25px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.status-message[hidden] {
+  display: none;
+}
+
+.site-footer {
+  margin-top: 22px;
+  color: #89948d;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    width: min(100% - 28px, 760px);
+    padding-top: 48px;
+  }
+
+  .list-heading,
+  .repository-item {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
